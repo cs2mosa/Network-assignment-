@@ -116,7 +116,7 @@ void event_frame_arrival() {
     Frame r = channel_sender_to_receiver.front();
     channel_sender_to_receiver.pop();
     if (r.is_corrupted) {
-        print_log("RECEIVER", "Frame " + to_string(r.seq) + " damaged. DISCARDING (Silence).");
+        print_log("RECEIVER", "Frame " + to_string(r.seq) + " damaged../");
         return;
     }
     next_expected_ack = (frame_expected + WINDOW_SIZE) % (MAX_SEQ + 1);
